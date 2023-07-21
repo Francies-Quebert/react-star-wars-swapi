@@ -1,5 +1,5 @@
 @use '../utils/index' as util;
-
+@use  './colors' as c;
 :root {
 	font-size: 16px;
 	font-family: 'Roboto', sans-serif;
@@ -18,7 +18,7 @@ html {
 
 body {
 	margin: 0;
-	color: var(--white);
+	color: c.$white;
 	overflow-x: hidden;
 }
 
@@ -43,14 +43,14 @@ button {
 a,
 a:active,
 a:visited {
-	color: var(--black);
+	color: c.$black;
 	outline: none;
 	text-decoration: none;
 }
 
 a:focus,
 button:focus {
-	background-color: lighten($color: #F6C644, $amount: 10);
+	background-color: lighten($color: c.$primary-color, $amount: 10);
 }
 
 .table-container {
@@ -64,7 +64,7 @@ button:focus {
 table {
 	border-collapse: collapse;
 	width: 100%;
-	border: 1px solid var(--primary-color);
+	border: 1px solid c.$primary-color;
 	border-radius: 0.625em;
 	user-select: none;
 }
@@ -108,7 +108,7 @@ td {
 	text-decoration: underline;
 
 	:hover {
-		color: var(--primary-color);
+		color: c.$primary-color;
 	}
 }
 
@@ -122,10 +122,10 @@ td {
 
 button.btn-primary,
 a.btn-primary {
-	background-color: var(--primary-color);
+	background-color: c.$primary-color;
 	border-radius: 0.75rem;
 	padding: 0.625rem 1rem;
-	color: var(--black);
+	color: c.$black;
 	border: 0px;
 	user-select: none;
 	cursor: pointer;

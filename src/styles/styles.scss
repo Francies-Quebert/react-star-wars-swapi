@@ -1,7 +1,6 @@
-@forward 'globals';
+@use 'globals' as *;
 @use 'utils' as util;
 
-$primary-color: var(--primary-color);
 
 .home-page {
     background: url('../assets/images/background.png');
@@ -45,7 +44,7 @@ $primary-color: var(--primary-color);
 
 
                 &-welcome {
-                    color: var(--primary-color);
+                    color: $primary-color;
                     margin-bottom: 1rem;
                 }
 
@@ -100,7 +99,7 @@ $primary-color: var(--primary-color);
 
 .layout {
     display: flex;
-    color: var(--black);
+    color: $black;
 
 
     &__banner {
@@ -142,7 +141,7 @@ $primary-color: var(--primary-color);
         .navbar {
             border-radius: 0.2em;
             height: 100%;
-            border: 1px solid var(--primary-color);
+            border: 1px solid $primary-color;
             width: 100%;
             position: fixed;
             left: -100%;
@@ -177,7 +176,7 @@ $primary-color: var(--primary-color);
 
             &__link {
                 text-align: center;
-                color: var(--black);
+                color: $black;
 
                 a {
                     padding: 1em 0em;
@@ -187,7 +186,7 @@ $primary-color: var(--primary-color);
 
                 a:hover,
                 .active {
-                    background-color: var(--primary-color);
+                    background-color: $primary-color;
                 }
             }
 
@@ -211,7 +210,7 @@ $primary-color: var(--primary-color);
 }
 
 .filter__page {
-    color: var(--black);
+    color: $black;
     margin-top: 1rem;
 
     &_control {
@@ -238,12 +237,12 @@ $primary-color: var(--primary-color);
     .details {
         display: flex;
         padding: 1em 0em;
-        border-bottom: 1px solid var(--primary-color);
+        border-bottom: 1px solid $primary-color;
 
         &__label {
             text-transform: capitalize;
             font-weight: 600;
-            color: var(--primary-color);
+            color: $primary-color;
             margin-right: 1em;
 
             @include util.breakpoint(medium) {
