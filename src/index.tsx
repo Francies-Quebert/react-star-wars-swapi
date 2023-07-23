@@ -23,14 +23,12 @@ export const routeConfig = [
       {
         path: "/",
         element: <Home />,
-        index: true,
       }, {
         element: <Layout />,
         children: [
           {
             path: "/star-war",
             element: <List />,
-            index: true,
           },
           {
             path: "/star-war/details/:type/:id",

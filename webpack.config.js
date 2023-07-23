@@ -56,13 +56,15 @@ module.exports = (env, argv) => {
         plugins: isProduction ? [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
+                title: 'Star war',
                 template: './public/index.html',
                 filename: './index.html',
+                base: '/'
             })
         ] : [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
-                title: 'Receipe Generator',
+                title: 'Star war',
                 template: './public/index.html',
                 filename: './index.html',
                 base: '/'

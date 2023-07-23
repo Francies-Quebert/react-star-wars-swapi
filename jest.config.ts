@@ -1,4 +1,4 @@
-export default module.exports = {
+export default  {
     roots: ['<rootDir>/src'],
     testEnvironment: 'jest-environment-jsdom',
     testMatch: ['**/__tests__/**/*.+(ts|tsx)', '**/?(*.)+(spec|test).+(ts|tsx)'],
@@ -8,7 +8,11 @@ export default module.exports = {
       "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":  '<rootDir>/__mocks__/fileMock.ts',
     },
     transform: {
-      '^.+\\.(ts|tsx)$': 'ts-jest',
+      '^.+\\.(ts|tsx)$':[
+        'ts-jest',
+        {
+          isolatedModules: true,
+        },],
     },
     transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
     setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
