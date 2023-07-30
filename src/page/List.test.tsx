@@ -63,7 +63,7 @@ describe('Home page should render', () => {
     it('List should navigate to deatils page ', async () => {
 
         const router = createMemoryRouter(routes, {
-            initialEntries: ["/star-war","/star-war/people/1"],
+            initialEntries: ["/star-war", "/star-war/people/1"],
             initialIndex: 0,
             future: {
                 v7_normalizeFormMethod: true,
@@ -72,8 +72,8 @@ describe('Home page should render', () => {
         render(<WithProvider router={router} />)
         await waitForElementToBeRemoved(() => screen.getByText("Through the vast reaches of cyberspace..."));
 
-        const viewMoreBtn = screen.getByRole("link",{name:/view more/i})
-        await userEvent.click(viewMoreBtn)
+        const viewMoreBtn = screen.getByRole("link", { name: /view more/i })
+        await waitFor(() => userEvent.click(viewMoreBtn))
         expect(viewMoreBtn).not.toBeInTheDocument();
 
         expect(screen.getByText('Details Page')).toBeInTheDocument();

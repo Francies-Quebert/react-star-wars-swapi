@@ -34,7 +34,7 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "serve-build": "webpack serve --mode production",
-    "test:dev": "jest",
+    "test:dev": "jest --watch",
     "test": "jest",
     "eject": "react-scripts eject"
   },
