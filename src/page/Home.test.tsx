@@ -1,4 +1,4 @@
-import { logRoles, render, screen } from "@testing-library/react"
+import { logRoles, render, screen, waitFor } from "@testing-library/react"
 import Home from "./Home"
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -39,7 +39,7 @@ describe('Home page should render', () => {
         const button = screen.getByRole('link', { name: 'START HERE!' });
         expect(button).toBeInTheDocument()
 
-        await userEvent.click(button)
+        await waitFor(()=>userEvent.click(button)) 
         const image = screen.getByRole('img', {
             name: /banner image/i
         })

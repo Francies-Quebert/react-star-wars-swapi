@@ -5,11 +5,14 @@ import ErrorElement from '../component/ErrorElement';
 
 function Details() {
     let { type, id } = useParams();
-    const { isFetching, error, isLoading, data } = useGetStarWarQuery<any>({ id: id || '1', type: type ?? 'people' })
+    const { isFetching, error, data } = useGetStarWarQuery<any>({ id: id || '1', type: type ?? 'people' })
     const navigate = useNavigate();
-    if (isFetching) return <div className='loading_comp'>The force of computation flows within...</div>
+    console.log(data,'errorerrorerror')
 
     if (error) return <ErrorElement redirectPath='/star-war' />
+
+    if (isFetching) return <div className='loading_comp'>The force of computation flows within...</div>
+
     return (
         <div className='d_cont'>
             <div className='btn-cont'>
